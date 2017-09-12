@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+  <!-- Product name as you want it to appear in Add/Remove Programs-->
+  <?define ProductName = "SmartDoc" ?>
+  <?define InstallName = "SmartDoc" ?>
+  <?define ManufacturerName = "Wikiled" ?>
+  
+  <?define ManufacturerFullName = "SmartDoc Ltd." ?>
+  
+  <?define UpgradeCode = "f66f2e4b-1efc-4e3d-8e93-0f9c826e5e08" ?>
+  <?if $(var.Platform) = x64 ?>
+    <?define Win64 = "yes" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+  <?else ?>
+    <?define Win64 = "no" ?>
+    <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+  <?endif ?>
+</Include>

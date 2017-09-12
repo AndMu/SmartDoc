@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{73D21B3D-5CB0-47AB-8134-2B3600656784}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Wikiled.SmartDoc.Logic</RootNamespace>
+    <AssemblyName>Wikiled.SmartDoc.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Alglib2, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.MachineLearning.1.0.9\lib\net462\Alglib2.dll</HintPath>
+    </Reference>
+    <Reference Include="Crc32C.NET, Version=1.0.5.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Crc32C.NET.1.0.5.0\lib\net20\Crc32C.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Data.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Docs.v17.1, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v17.1.Core, Version=17.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.0.86.0\lib\20\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Iesi.Collections, Version=4.0.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <HintPath>..\packages\Iesi.Collections.4.0.2\lib\net461\Iesi.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <HintPath>..\packages\NLog.4.4.12\lib\net45\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenNLP, Version=1.0.6431.40493, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.OpenNLP.1.5.2\lib\net462\OpenNLP.dll</HintPath>
+    </Reference>
+    <Reference Include="ParallelExtensionsExtras, Version=1.2.3.0, Culture=neutral, PublicKeyToken=665f4d61f853b5a9, processorArchitecture=MSIL">
+      <HintPath>..\packages\ParallelExtensionsExtras.1.2.0.0\lib\net40\ParallelExtensionsExtras.dll</HintPath>
+    </Reference>
+    <Reference Include="Polly, Version=5.3.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Polly.5.3.1\lib\net45\Polly.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="protobuf-net, Version=2.3.2.0, Culture=neutral, PublicKeyToken=257b51d87d2e4d67, processorArchitecture=MSIL">
+      <HintPath>..\packages\protobuf-net.2.3.2\lib\net40\protobuf-net.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpEntropy, Version=1.0.6431.40492, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.OpenNLP.1.5.2\lib\net462\SharpEntropy.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpWordNet, Version=1.0.6431.40492, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.OpenNLP.1.5.2\lib\net462\SharpWordNet.dll</HintPath>
+    </Reference>
+    <Reference Include="SmartThreadPool, Version=2.2.4.0, Culture=neutral, PublicKeyToken=1126fe8b671e8a79, processorArchitecture=MSIL">
+      <HintPath>..\packages\SmartThreadPool.dll.2.2.4\lib\net45\SmartThreadPool.dll</HintPath>
+    </Reference>
+    <Reference Include="Snappy.NET, Version=1.1.1.8, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Snappy.NET.1.1.1.8\lib\net45\Snappy.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net46\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Reactive.Core, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Core.3.1.1\lib\net46\System.Reactive.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Interfaces, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Interfaces.3.1.1\lib\net45\System.Reactive.Interfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Linq, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Linq.3.1.1\lib\net46\System.Reactive.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.PlatformServices, Version=3.0.3000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.PlatformServices.3.1.1\lib\net46\System.Reactive.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Reactive.Windows.Threading, Version=3.0.1000.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.Windows.Threading.3.1.1\lib\net45\System.Reactive.Windows.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Dataflow, Version=4.5.24.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Tpl.Dataflow.4.5.24\lib\portable-net45+win8+wpa81\System.Threading.Tasks.Dataflow.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Wikiled.Arff, Version=1.0.18.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.Arff.1.0.18\lib\net462\Wikiled.Arff.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.Core.Utility, Version=2.1.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.Core.Utility.2.1.17\lib\net462\Wikiled.Core.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.FlatBuffers, Version=2.3.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.Redis.2.3.17\lib\net462\Wikiled.FlatBuffers.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.MachineLearning, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.MachineLearning.1.0.9\lib\net462\Wikiled.MachineLearning.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.MachineLearning.Svm, Version=1.1.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.MachineLearning.Svm.1.1.17\lib\net462\Wikiled.MachineLearning.Svm.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.Redis, Version=2.3.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.Redis.2.3.17\lib\net462\Wikiled.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.Sentiment.Analysis, Version=2.6.36.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.Sentiment.Analysis.2.6.36\lib\net462\Wikiled.Sentiment.Analysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.Sentiment.Text, Version=2.6.36.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.Sentiment.Analysis.2.6.36\lib\net462\Wikiled.Sentiment.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.Text.Analysis, Version=1.2.17.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.Text.Analysis.1.2.17\lib\net462\Wikiled.Text.Analysis.dll</HintPath>
+    </Reference>
+    <Reference Include="Wikiled.Text.Inquirer, Version=1.0.19.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Wikiled.Text.Inquirer.1.0.19\lib\net462\Wikiled.Text.Inquirer.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Helpers\ImagerHelper.cs" />
+    <Compile Include="Learning\FileManagerFactory.cs" />
+    <Compile Include="Learning\IFileManager.cs" />
+    <Compile Include="Learning\IFileManagerFactory.cs" />
+    <Compile Include="Learning\ILearnedClassifier.cs" />
+    <Compile Include="Learning\ITrainingManager.cs" />
+    <Compile Include="Learning\LearnedClassifier.cs" />
+    <Compile Include="Learning\LearningException.cs" />
+    <Compile Include="Learning\ProcessingProgress.cs" />
+    <Compile Include="Learning\TrainingManager.cs" />
+    <Compile Include="Monitoring\FileMonitor.cs" />
+    <Compile Include="Monitoring\FileMonitorFactory.cs" />
+    <Compile Include="Monitoring\FileWatcher.cs" />
+    <Compile Include="Monitoring\IFileMonitor.cs" />
+    <Compile Include="Monitoring\IFileMonitorFactory.cs" />
+    <Compile Include="Monitoring\IFileWatcher.cs" />
+    <Compile Include="Monitoring\MonitoringResult.cs" />
+    <Compile Include="Pdf\IDocumentParser.cs" />
+    <Compile Include="Pdf\Preview\IPreviewCreator.cs" />
+    <Compile Include="Pdf\Preview\PdfPreviewCreator.cs" />
+    <Compile Include="Pdf\Readers\DevExpress\DevExpressPdfParser.cs" />
+    <Compile Include="Pdf\Readers\DevExpress\DevExpressParserFactory.cs" />
+    <Compile Include="Pdf\Readers\DevExpress\NullTextParser.cs" />
+    <Compile Include="Pdf\Readers\DevExpress\RichDocumentParser.cs" />
+    <Compile Include="Pdf\Readers\ITextParser.cs" />
+    <Compile Include="Pdf\Readers\ITextParserFactory.cs" />
+    <Compile Include="Results\DocumentDefinition.cs" />
+    <Compile Include="Learning\FileManager.cs" />
+    <Compile Include="Results\DocumentSet.cs" />
+    <Compile Include="Pdf\DocumentParser.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Results\DocumentSetExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

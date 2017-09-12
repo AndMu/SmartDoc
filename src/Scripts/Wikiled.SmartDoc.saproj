@@ -1,0 +1,954 @@
+<SmartAssemblyProject ProjectId="{43e3293a-3e68-432f-8ebe-ee17140ba7a3}" Version="2.0">
+    <MainAssemblyFileName>..\SmartDoc\bin\Release\Wikiled.SmartDoc.exe</MainAssemblyFileName>
+    <FriendlyName>SmartDoc</FriendlyName>
+    <CompanyName>Wikiled Ltd.</CompanyName>
+    <Configuration Name="Release">
+        <Options>
+            <ExceptionReporting EmailToBeNotified="andrius@wikiled.com" ReportExceptions="1" Template="res:{SmartExceptions}.1033.dll" />
+            <FeatureUsageReporting ReportUsages="0" Template="res:SmartUsageWithUIConsentFirstRun1033.dll" />
+            <StringsEncoding />
+            <StrongNameSigning Sign="0" />
+            <OtherOptimizations />
+            <Obfuscation FieldsNameMangling="2" NameMangling="3" />
+            <OtherProtections SuppressIldasm="1" />
+            <Debugging CreatePDB="1" />
+        </Options>
+        <ApplicationName>SmartDoc UI</ApplicationName>
+        <Destination DestinationFileName="..\SmartDoc\bin\Decoded\Wikiled.SmartDoc.exe" />
+        <Assemblies>
+            <Assembly AssemblyName="Wikiled.SmartDoc">
+                <Merging>
+                    <ResourcesCompression />
+                    <MemberRefsProxy Proxy="1" />
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Prism.Mef.Wpf, Culture=neutral, PublicKeyToken=91a96d2a154366d8">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Prism.Wpf, Culture=neutral, PublicKeyToken=91a96d2a154366d8">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Practices.ServiceLocation, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Prism, Culture=neutral, PublicKeyToken=91a96d2a154366d8">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Sentiment.Text" MandatoryPath="..\SmartDoc\bin\Release\Wikiled.Sentiment.Text.dll">
+                <Merging>
+                    <ResourcesCompression />
+                    <MemberRefsProxy Proxy="1" />
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Core.Utility">
+                <Merging>
+                    <ResourcesCompression />
+                    <MemberRefsProxy Proxy="1" />
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="NLog, Culture=neutral, PublicKeyToken=5120e14c03d0593c">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="ICSharpCode.SharpZipLib, Culture=neutral, PublicKeyToken=1b03e6acf1164f73">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="SmartThreadPool, Culture=neutral, PublicKeyToken=1126fe8b671e8a79">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Snappy.NET">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Crc32C.NET">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="protobuf-net, Culture=neutral, PublicKeyToken=257b51d87d2e4d67">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="ParallelExtensionsExtras">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Sentiment.MachineLearning">
+                <Merging>
+                    <ResourcesCompression />
+                    <MemberRefsProxy Proxy="1" />
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.SUTime">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                    <MemberRefsProxy Proxy="1" />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Redis">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                    <MemberRefsProxy Proxy="1" />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="StackExchange.Redis">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Common">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                    <MemberRefsProxy Proxy="1" />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.FlatBuffers">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="0" />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Practices.TransientFaultHandling.Core, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.SmartDoc.Logic">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                    <MemberRefsProxy Proxy="1" />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Docs.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Data.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Printing.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Pdf.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.RichEdit.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Office.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Pdf.v16.1.Drawing, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Snap.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.DataAccess.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Xpo.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.CodeParser.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Sparkline.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.XtraCharts.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Charts.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Spreadsheet.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Sentiment.Analysis">
+                <Merging>
+                    <ResourcesCompression />
+                    <MemberRefsProxy Proxy="1" />
+                    <Pruning />
+                    <Obfuscation Obfuscate="1">
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow Obfuscate="1" />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Xpf.Grid.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Xpf.Core.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Mvvm.v16.1, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="DevExpress.Xpf.Grid.v16.1.Core, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="ReactiveUI">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Splat">
+                <Merging Merge="0">
+                    <Pruning />
+                    <Obfuscation>
+                        <Exclusion />
+                    </Obfuscation>
+                    <ControlFlow />
+                    <MemberRefsProxy />
+                    <ResourcesCompression />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Practices.Unity, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f" NotAvailable="1">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Practices.Unity.Interception, Culture=neutral, PublicKeyToken=6d32ff45e0ccc69f" NotAvailable="1">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="alglibnet2" NotAvailable="1">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="MathNet.Numerics" NotAvailable="1">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Sentiment.Text.NLP.Stanford" NotAvailable="1">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="mscorlib, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="PresentationFramework, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Xaml, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="WindowsBase, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="PresentationCore, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Configuration, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Xml, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Core, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="UIAutomationProvider, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="UIAutomationTypes, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="ReachFramework, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="PresentationUI, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Printing, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Accessibility, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Deployment, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Security, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Data.SqlXml, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Numerics, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Windows.Input.Manipulations, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Drawing, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Runtime.Serialization.Formatters.Soap, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.DirectoryServices, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ComponentModel.Composition, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Runtime, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Resources.ResourceManager, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Diagnostics.Tools, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Diagnostics.Debug, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Globalization, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ObjectModel, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Linq.Expressions, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Collections, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Reflection, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Threading, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Threading.Tasks, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Linq, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Reflection.Extensions, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Windows.Interactivity, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ComponentModel.Composition.Registration, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Reflection.Context, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.SmartDoc, Culture=neutral, PublicKeyToken=null">
+                <Merging>
+                    <ResourcesCompression />
+                    <MemberRefsProxy />
+                    <Pruning />
+                    <Obfuscation />
+                    <ControlFlow />
+                </Merging>
+                <Embedding />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.SmartDoc.Logic, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Sentiment.Text, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Core.Utility, Culture=neutral, PublicKeyToken=null">
+                <Embedding Embed="1" />
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Snappy.NET, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Crc32C.NET, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="ParallelExtensionsExtras, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Sentiment.MachineLearning, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="alglibnet2, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.SUTime, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Redis, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="StackExchange.Redis, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Common, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.FlatBuffers, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="MathNet.Numerics, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Wikiled.Sentiment.Analysis, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="1" />
+            </Assembly>
+            <Assembly AssemblyName="ReactiveUI, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="Splat, Culture=neutral, PublicKeyToken=null">
+                <Merging />
+                <Embedding Embed="0" />
+            </Assembly>
+            <Assembly AssemblyName="System.Reactive.Linq, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Threading.Tasks.Dataflow, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Reactive.PlatformServices, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Reactive.Interfaces, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Reactive.Core, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ServiceModel, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Data, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Runtime.Serialization, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Transactions, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.IO.Compression, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ServiceModel.Internals, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="SMDiagnostics, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.IdentityModel, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Transactions.Bridge, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Web.Services, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.EnterpriseServices, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.IdentityModel.Selectors, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Web.ApplicationServices, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Messaging, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Xml.Linq, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Runtime.DurableInstancing, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ServiceProcess, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Net.Http, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ServiceModel.Activation, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Runtime.Remoting, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Web, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Web.RegularExpressions, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Design, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ComponentModel.DataAnnotations, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.DirectoryServices.Protocols, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Runtime.Caching, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Build.Utilities.v4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Build.Framework, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.Build.Tasks.v4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Data.OracleClient, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Drawing.Design, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Configuration.Install, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.ServiceModel.Activities, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Activities, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Xaml.Hosting, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Activities.DurableInstancing, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.VisualBasic.Activities.Compiler, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.VisualBasic, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Management, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.JScript, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Data.Entity.Design, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="EntityFramework, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Data.Linq, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.CSharp, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Dynamic, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Data.Entity, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Data.DataSetExtensions, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Diagnostics.Tracing, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Collections.Concurrent, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Dynamic.Runtime, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Runtime.Extensions, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="System.Reactive.Windows.Threading, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="SmartExceptionsWithUI1033, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="SmartExceptionsCore, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="Microsoft.VisualC, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="SmartAssembly.Zip, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="SmartAssembly.Shared, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging />
+            </Assembly>
+            <Assembly AssemblyName="SmartAssembly.AssemblyResolver, Culture=neutral, PublicKeyToken=7f465a1c156d4d57">
+                <Merging />
+            </Assembly>
+        </Assemblies>
+    </Configuration>
+</SmartAssemblyProject>

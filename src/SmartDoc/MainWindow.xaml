@@ -1,0 +1,33 @@
+﻿<Window
+	xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+	xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+	xmlns:regions="http://prismlibrary.com/"
+	x:Class="Wikiled.SmartDoc.MainWindow"
+	mc:Ignorable="d"
+	Title="SmartDoc" Height="450" Width="555" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" Icon="Resources/Treetog-Junior-Folder-documents.ico">
+    <DockPanel Margin="0">
+        <dxb:StatusBarControl Caption="StatusBar" DockPanel.Dock="Bottom" ShowSizeGrip="True">
+            <dxb:BarStaticItem Content="{Binding Version}" ShowBorder="False"/>
+            <dxb:BarStaticItem ShowBorder="False"/>
+        </dxb:StatusBarControl>
+        <dx:DXTabControl regions:RegionManager.RegionName="MainRegion" >
+            <dx:DXTabControl.ItemContainerStyle>
+                <Style TargetType="dx:DXTabItem">
+                    <Setter Property="Header">
+                        <Setter.Value>
+                            <Binding Path="Content.DataContext.Name"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Visibility">
+                        <Setter.Value>
+                            <Binding Path="Content.DataContext.Visibility"/>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </dx:DXTabControl.ItemContainerStyle>
+        </dx:DXTabControl>
+    </DockPanel>
+</Window>

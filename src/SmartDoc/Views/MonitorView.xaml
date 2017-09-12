@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="Wikiled.SmartDoc.Views.MonitorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="500">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Vertical"  HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="0" >
+            <dxe:ButtonEdit NullText="Destination..." IsEnabled="{Binding CanEdit}" EditValue="{Binding Destination.Path}" AllowDefaultButton="False" Height="30" VerticalAlignment="Center" Margin="10,0,10,0"  >
+                <dxe:ButtonInfo IsEnabled="{Binding CanEdit}" Command="{Binding Destination.Open}" GlyphKind="User">
+                    <ContentControl>
+                        <Label Margin="2" Content="Select..."/>
+                    </ContentControl>
+                </dxe:ButtonInfo>
+            </dxe:ButtonEdit>
+            <dxe:ButtonEdit NullText="Monitoring Location..." IsEnabled="{Binding CanEdit}" EditValue="{Binding Monitor.Path}" AllowDefaultButton="False" Height="30" VerticalAlignment="Center" Margin="10,10,10,0"  >
+                <dxe:ButtonInfo IsEnabled="{Binding CanEdit}" Command="{Binding Monitor.Open}" GlyphKind="User">
+                    <ContentControl>
+                        <Label Margin="2" Content="Select..."/>
+                    </ContentControl>
+                </dxe:ButtonInfo>
+            </dxe:ButtonEdit>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <dx:SimpleButton Command="{Binding Perform}" Content="Monitor"/>
+                <dx:SimpleButton Command="{Binding Cancel}" Content="Stop"/>
+                <dx:SimpleButton Command="{Binding Move}" Content="Move"/>
+            </StackPanel>
+        </StackPanel>
+        <dxlc:GroupBox Header="Found Documents" Grid.Row="1" >
+            <dxg:GridControl x:Name="documentsGrid" SelectionMode="Row" SelectedItems="{Binding SelectedItems}" 
+                             CurrentItem="{Binding CurrentItem}"
+                             MouseDoubleClick="Control_OnMouseDoubleClick"  VerticalAlignment="Stretch" 
+                             HorizontalAlignment="Stretch" ItemsSource="{Binding PendingFiles}" >
+                <dxg:GridControl.Columns>
+                    <dxg:GridColumn FieldName="Preview" AllowEditing="False" HorizontalHeaderContentAlignment="Center">
+                        <dxg:GridColumn.EditSettings>
+                            <dxe:ImageEditSettings Stretch="Fill" MaxWidth="50" />
+                        </dxg:GridColumn.EditSettings>
+                    </dxg:GridColumn>
+                    <dxg:GridColumn FieldName="File" AllowEditing="False" HorizontalHeaderContentAlignment="Center" IsSmart="True"/>
+                    <dxg:GridColumn FieldName="Class" HorizontalHeaderContentAlignment="Center" >
+                        <dxg:GridColumn.EditSettings>
+                            <dxe:ComboBoxEditSettings ItemsSource="{Binding Classes}" />
+                        </dxg:GridColumn.EditSettings>
+                    </dxg:GridColumn>
+                </dxg:GridControl.Columns>
+                <dxg:GridControl.View>
+                    <dxg:TableView x:Name="tableView" ShowGroupPanel="False" AllowConditionalFormattingMenu="False" ShowDetailButtons="False" ShowFilterPanelMode="Never" ShowAutoFilterRow="False"
+						AutoWidth="True" ShowSearchPanelCloseButton="False" ShowIndicator="False" ShowBandsPanel="False" ShowBandsInCustomizationForm="False"
+						IsColumnMenuEnabled="False" IsGroupFooterMenuEnabled="False" IsGroupPanelMenuEnabled="False"
+						IsRowCellMenuEnabled="False" IsTotalSummaryMenuEnabled="False" ShowCheckBoxSelectorColumn="True" />
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </dxlc:GroupBox>
+        <dxe:ProgressBarEdit Grid.Row="2" Visibility="{Binding BusyVisibility}" 
+			Width="400" Height="30" VerticalAlignment="Center" Foreground="Black">
+            <dxe:ProgressBarEdit.StyleSettings>
+                <dxe:ProgressBarMarqueeStyleSettings/>
+            </dxe:ProgressBarEdit.StyleSettings>
+        </dxe:ProgressBarEdit>
+    </Grid>
+</UserControl>

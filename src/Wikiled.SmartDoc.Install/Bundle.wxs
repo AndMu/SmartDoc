@@ -1,0 +1,15 @@
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"  xmlns:bal="http://schemas.microsoft.com/wix/BalExtension">
+  <?include $(sys.CURRENTDIR)Variables.wxi ?>
+
+  <Bundle Name="$(var.ProductName) $(var.ProductVersion)" Version="$(var.ProductVersion)" Manufacturer="$(var.ManufacturerFullName)" UpgradeCode="$(var.UpgradeCode)" >
+    <BootstrapperApplicationRef Id="WixStandardBootstrapperApplication.HyperlinkLicense">
+      <bal:WixStandardBootstrapperApplication
+        LicenseUrl=""
+        xmlns:bal="http://schemas.microsoft.com/wix/BalExtension" />
+    </BootstrapperApplicationRef>
+    <Chain>
+      <PackageGroupRef Id="NetFx46Web"/>
+      <MsiPackage Id="MainPackage" SourceFile="$(var.SmartDoc.TargetPath)" DisplayInternalUI="yes" Vital="yes" />
+    </Chain>
+  </Bundle>
+</Wix>

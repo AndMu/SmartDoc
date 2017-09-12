@@ -1,0 +1,81 @@
+﻿<UserControl xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" 
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             x:Class="Wikiled.SmartDoc.Views.SelectView"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Resources/MainDictionary.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center"  Grid.Row="0">
+            <dxe:ButtonEdit NullText="Location..." IsEnabled="{Binding CanEdit}" EditValue="{Binding Select.Path}" AllowDefaultButton="False" Width="260" Height="30" Margin="10,0,10,0" VerticalAlignment="Center"  >
+                <dxe:ButtonEdit.Buttons>
+                    <dxe:ButtonInfo  Command="{Binding Select.Open}" GlyphKind="User">
+                        <ContentControl>
+                            <Label Margin="3">Select...</Label>
+                        </ContentControl>
+                    </dxe:ButtonInfo>
+                </dxe:ButtonEdit.Buttons>
+            </dxe:ButtonEdit>
+            <dx:SimpleButton Command="{Binding Perform}" Width="80" Height="30" Content="Analyse"/>
+            <dx:SimpleButton Command="{Binding Cancel}" Width="80" Height="30" Content="Cancel"/>
+        </StackPanel>
+        <dxlc:GroupBox Header="Processed Documents" Grid.Row="1" >
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <StackPanel Style="{StaticResource ResultPanel}" Grid.Column="0" Grid.Row="0">
+                    <Label>Total Found:</Label>
+                    <Label Style="{StaticResource Result}" Content="{Binding Result.TotalRequested}"/>
+                </StackPanel>
+                <StackPanel Style="{StaticResource ResultPanel}" Grid.Column="1" Grid.Row="0" >
+                    <Label>Total Processed:</Label>
+                    <Label Style="{StaticResource Result}" Content="{Binding Result.Document.Length}"/>
+                </StackPanel>
+                <StackPanel Style="{StaticResource ResultPanel}" Grid.Column="2"  Grid.Row="0">
+                    <Label>Date:</Label>
+                    <Label Style="{StaticResource Result}" Content="{Binding Result.Created}"/>
+                </StackPanel>
+                <dxg:TreeListControl x:Name="treeList" Grid.Column="0" ItemsSource="{Binding TreeData}" SelectionMode="None"    
+                                     Grid.Row="1" Grid.ColumnSpan="2" ItemsSourceChanged="treeList_ItemsSourceChanged" >
+                    <dxg:TreeListControl.Columns>
+                        <dxg:TreeListColumn FieldName="Description" AllowSorting="True" Width="6*"/>
+                    </dxg:TreeListControl.Columns>
+                    <dxg:TreeListControl.View>
+                        <dxg:TreeListView x:Name="View"  AllowEditing="False"  AllowColumnFiltering="False" AllowIndeterminateCheckState="False" 
+                                          NodeImageSelector="{StaticResource CategoryImageSelector}" 
+                                          AutoExpandAllNodes="True" TreeDerivationMode="HierarchicalDataTemplate" AllowRecursiveNodeChecking="True" 
+                                          FetchSublevelChildrenOnExpand="False" IsTotalSummaryMenuEnabled="False" ShowVerticalLines="False" 
+                                          TreeLineStyle="Solid" UseLightweightTemplates="Row" AllowScrollAnimation="True" ExtendScrollBarToFixedColumns="True" 
+                                          ShowCheckboxes="True" ShowNodeImages="True" ShowColumnHeaders="False" ShowIndicator="False" ShowHorizontalLines="False" NodeCheckStateChanged="View_NodeCheckStateChanged"/>
+                    </dxg:TreeListControl.View>
+                </dxg:TreeListControl>
+            </Grid>
+        </dxlc:GroupBox>
+        <dxe:ProgressBarEdit Grid.Row="2" Visibility="{Binding BusyVisibility}" 
+                             Height="30" VerticalAlignment="Center"   
+                             ContentDisplayMode="Value" Foreground="Black" DisplayFormatString="{}{0} Documents"
+                             Minimum="0" Maximum="{Binding Progress.Total}" Value="{Binding Progress.Current}" />
+    </Grid>
+</UserControl>
