@@ -153,13 +153,14 @@ namespace Wikiled.SmartDoc.ViewModel.Definitions
         {
             CancelToken = new CancellationTokenSource();
             var subject = new Subject<T>();
+
             // Run something in the background
             Observable.Start(
                 async () =>
                 {
                     try
                     {
-                        var data = await LoadTask();
+                        var data = await LoadTask().ConfigureAwait(false);
                         subject.OnNext(data);
                         subject.OnCompleted();
                     }
@@ -177,8 +178,8 @@ namespace Wikiled.SmartDoc.ViewModel.Definitions
         {
             try
             {
-                var data = await LoadLogic(Token);
-                await dataHandler.Save(data, Token);
+                var data = await LoadLogic(Token).ConfigureAwait(false);
+                await dataHandler.Save(data, Token).ConfigureAwait(false);
                 return data;
             }
             catch (TaskCanceledException)

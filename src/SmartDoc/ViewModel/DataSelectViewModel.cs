@@ -48,8 +48,8 @@ namespace Wikiled.SmartDoc.ViewModel
 
         protected override async Task<DocumentSet> LoadData()
         {
-            var result = await base.LoadData();
-            if(result != null)
+            var result = await base.LoadData().ConfigureAwait(false);
+            if (result != null)
             {
                 Select.Path = result.Path;
             }
@@ -63,13 +63,13 @@ namespace Wikiled.SmartDoc.ViewModel
             var tracking = fileManager.ProgressUpdate
                                       .Select(item => item)
                                       .ToProperty(this, model => model.Progress);
-            using(tracking)
+            using (tracking)
             {
                 progress = tracking;
-                var result = await fileManager.LoadAll(new DirectoryInfo(Select.Path));
-                if(token.IsCancellationRequested)
+                var result = await fileManager.LoadAll(new DirectoryInfo(Select.Path)).ConfigureAwait(false);
+                if (token.IsCancellationRequested)
                 {
-                    return await LoadData();
+                    return await LoadData().ConfigureAwait(false);
                 }
 
                 progress = null;
