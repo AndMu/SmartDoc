@@ -21,14 +21,8 @@ namespace Wikiled.SmartDoc.Views
         [Import]
         public IDataSelectViewModel Model
         {
-            get
-            {
-                return DataContext as IDataSelectViewModel;
-            }
-            set
-            {
-                DataContext = value;
-            }
+            get => DataContext as IDataSelectViewModel;
+            set => DataContext = value;
         }
 
         private void treeList_ItemsSourceChanged(object sender, DevExpress.Xpf.Grid.ItemsSourceChangedEventArgs e)

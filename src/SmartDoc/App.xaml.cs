@@ -1,6 +1,7 @@
-﻿using System.Threading;
+﻿using System.Reactive.Concurrency;
 using System.Windows;
 using DevExpress.Xpf.Core;
+using ReactiveUI;
 using Wikiled.SmartDoc.Setup;
 using Wikiled.SmartDoc.Views.SplashScreen;
 
@@ -16,6 +17,7 @@ namespace Wikiled.SmartDoc
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
+            RxApp.MainThreadScheduler = new DispatcherScheduler(Dispatcher);
             DXSplashScreen.Show<StartScreen>();
             ApplicationThemeHelper.UpdateApplicationThemeName();
             bootstrapper = new Bootstrapper();

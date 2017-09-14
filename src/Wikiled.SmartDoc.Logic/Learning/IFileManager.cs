@@ -7,8 +7,8 @@ namespace Wikiled.SmartDoc.Logic.Learning
 {
     public interface IFileManager
     {
-        Task<DocumentSet> LoadAll(DirectoryInfo repositoryPath);
-
         IObservable<ProcessingProgress> ProgressUpdate { get; }
+
+        Task<DocumentSet> LoadAll(DirectoryInfo repositoryPath);
     }
 }

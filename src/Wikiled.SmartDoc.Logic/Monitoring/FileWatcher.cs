@@ -35,7 +35,7 @@ namespace Wikiled.SmartDoc.Logic.Monitoring
         public bool CanUseFile(string filename)
         {
             Guard.NotNullOrEmpty(() => filename, filename);
-            if(filter != null)
+            if (filter != null)
             {
                 if (!filter.Any(item => filename.EndsWith(item, StringComparison.OrdinalIgnoreCase)))
                 {
@@ -73,7 +73,7 @@ namespace Wikiled.SmartDoc.Logic.Monitoring
 
         private void WatcherOnChanged(object sender, FileSystemEventArgs fileSystemEventArgs)
         {
-            if(!CanUseFile(fileSystemEventArgs.Name))
+            if (!CanUseFile(fileSystemEventArgs.Name))
             {
                 return;
             }

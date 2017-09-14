@@ -71,7 +71,7 @@ namespace Wikiled.SmartDoc.Logic.Monitoring
                 tasks.Add(Task.Run(() => ProcessDirectory(directory), token));
             }
 
-            await Task.WhenAll(tasks);
+            await Task.WhenAll(tasks).ConfigureAwait(false);
             subscription = watcher.FileChanged
                                   .Throttle(throttle)
                                   .ObserveOn(ThreadPoolScheduler.Instance)
@@ -83,11 +83,11 @@ namespace Wikiled.SmartDoc.Logic.Monitoring
         {
             try
             {
-                await limit.WaitAsync(token);
+                await limit.WaitAsync(token).ConfigureAwait(false);
                 FileInfo fileInfo = new FileInfo(file);
                 var previewTask = Task.Run(() => previewCreator.CreatePreview(fileInfo), token);
-                string className = await classifier.Classify(fileInfo);
-                MonitoringResult result = new MonitoringResult(fileInfo, className, await previewTask);
+                string className = await classifier.Classify(fileInfo).ConfigureAwait(false);
+                MonitoringResult result = new MonitoringResult(fileInfo, className, await previewTask.ConfigureAwait(false));
                 result.MoveRequest += ResultOnMoveRequest;
                 return result;
             }
@@ -118,7 +118,7 @@ namespace Wikiled.SmartDoc.Logic.Monitoring
                                  .Where(item => watcher.CanUseFile(item))
                                  .Select(file => ProcessFile(fileTable, file))
                                  .ToList();
-            await Task.WhenAll(tasks);
+            await Task.WhenAll(tasks).ConfigureAwait(false);
             RemoveFiles(fileTable);
             directoryFiles[directory] = tasks.Select(item => item.Result).ToArray();
         }
@@ -128,7 +128,7 @@ namespace Wikiled.SmartDoc.Logic.Monitoring
             MonitoringResult result;
             if (!fileTable.TryGetValue(file, out result))
             {
-                result = await CreateNewFile(file);
+                result = await CreateNewFile(file).ConfigureAwait(false);
                 lock (syncRoot)
                 {
                     pendingFiles.Add(result);
@@ -180,7 +180,7 @@ namespace Wikiled.SmartDoc.Logic.Monitoring
             }
 
             QuickScan(args);
-            await ProcessDirectory(directory);
+            await ProcessDirectory(directory).ConfigureAwait(false);
         }
 
         private void ResultOnMoveRequest(object sender, EventArgs eventArgs)

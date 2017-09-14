@@ -27,7 +27,7 @@ namespace Wikiled.SmartDoc.Logic.Monitoring
 
         public BitmapSource Preview => bitmapSource.Value;
 
-        public string Class { get; set; }
+        public string Class { get; private set; }
 
         public FileInfo DestinationFile { get; private set; }
 

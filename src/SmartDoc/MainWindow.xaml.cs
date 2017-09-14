@@ -17,14 +17,8 @@ namespace Wikiled.SmartDoc
         [Import]
         public IMainViewModel Model
         {
-            get
-            {
-                return DataContext as IMainViewModel;
-            }
-            set
-            {
-                DataContext = value;
-            }
+            get => DataContext as IMainViewModel;
+            set => DataContext = value;
         }
     }
 }

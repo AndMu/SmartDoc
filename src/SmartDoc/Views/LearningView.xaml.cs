@@ -17,14 +17,8 @@ namespace Wikiled.SmartDoc.Views
         [Import]
         public ITrainingViewModel Model
         {
-            get
-            {
-                return DataContext as ITrainingViewModel;
-            }
-            set
-            {
-                DataContext = value;
-            }
+            get => DataContext as ITrainingViewModel;
+            set => DataContext = value;
         }
     }
 }

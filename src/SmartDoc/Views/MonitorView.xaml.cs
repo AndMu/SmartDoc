@@ -19,14 +19,8 @@ namespace Wikiled.SmartDoc.Views
         [Import]
         public IMonitorViewModel Model
         {
-            get
-            {
-                return DataContext as IMonitorViewModel;
-            }
-            set
-            {
-                DataContext = value;
-            }
+            get => DataContext as IMonitorViewModel;
+            set => DataContext = value;
         }
 
         private void Control_OnMouseDoubleClick(object sender, MouseButtonEventArgs e)

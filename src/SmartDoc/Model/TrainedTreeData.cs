@@ -27,8 +27,7 @@ namespace Wikiled.SmartDoc.Model
         public static TrainedTreeData ConstructFromDocuments(DocumentSet dataSet)
         {
             Guard.NotNull(() => dataSet, dataSet);
-            Guard.NotNull(() => dataSet.Document, dataSet.Document);
-            return ConstructInternal(dataSet.Document.Select(item => (Func<string>)(() => item.Labels[0])));
+            return ConstructInternal(dataSet.Document?.Select(item => (Func<string>)(() => item.Labels[0])));
         }
 
         public static TrainedTreeData Construct(IArffDataSet dataSet)
@@ -41,14 +40,18 @@ namespace Wikiled.SmartDoc.Model
         {
             Dictionary<string, int> table = new Dictionary<string, int>();
             int totalItems = 0;
-            foreach (var review in sources)
+
+            if (sources != null)
             {
-                string className = review();
-                int total;
-                table.TryGetValue(className, out total);
-                total++;
-                totalItems++;
-                table[className] = total;
+                foreach (var review in sources)
+                {
+                    string className = review();
+                    int total;
+                    table.TryGetValue(className, out total);
+                    total++;
+                    totalItems++;
+                    table[className] = total;
+                }
             }
 
             var root = new TrainedTreeData("Documents", totalItems);

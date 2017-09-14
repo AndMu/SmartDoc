@@ -8,8 +8,8 @@
             Current = current;
         }
 
-        public int Total { get; private set; }
+        public int Total { get; }
 
-        public int Current { get; private set; }
+        public int Current { get; }
     }
 }
