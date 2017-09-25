@@ -31,7 +31,7 @@ namespace Wikiled.SmartDoc.Logic.Tests.Pdf.Readers.DevExpress
         {
             var result = instance.Parse();
             Assert.IsNotNull(result);
-            Assert.AreEqual(4719, result.Length);
+            Assert.AreEqual(4717, result.Length);
         }
     }
 }
