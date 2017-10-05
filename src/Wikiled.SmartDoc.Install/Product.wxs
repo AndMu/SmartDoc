@@ -76,7 +76,8 @@
 			  Directory="DesktopFolder"
               Description="SmartDoc"
               Target="[INSTALLFOLDER]Wikiled.SmartDoc.exe"
-              WorkingDirectory="MYAPPDIRPROPERTY"/>          
+              WorkingDirectory="MYAPPDIRPROPERTY"/>       
+		   <RemoveFolder Id="DesktopFolder" On="uninstall"/>			  
           <RegistryValue
               Root="HKCU"
               Key="Software\Wikiled\SmartDoc"
@@ -91,6 +92,7 @@
              Description="Runs SmartDoc"
              Directory="MyStartMenuFolder"
              Target="[INSTALLFOLDER]Wikiled.SmartDoc.exe" />        
+		<RemoveFolder Id="RemoveStartMenuFolder" Directory="MyStartMenuFolder" On="uninstall" />
         <RegistryValue Root="HKCU"
             Key="Software\Wikiled\SmartDoc"
             Name="installed"
