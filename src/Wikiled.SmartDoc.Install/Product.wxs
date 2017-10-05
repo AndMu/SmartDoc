@@ -69,31 +69,28 @@
       </Directory>
       <Directory Id="DesktopFolder" Name="Desktop"/>
     </Directory>
-    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-      <Directory Id="DesktopFolder" Name="Desktop">
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">      
         <Component Id="ApplicationShortcutDesktop" Guid="*">
           <Shortcut Id="ApplicationDesktopShortcut"
-              Name="Text under your icon"
-              Description="Comment field in your shortcut"
-              Target="[MYAPPDIRPROPERTY]MyApp.exe"
-              WorkingDirectory="MYAPPDIRPROPERTY"/>
-          <RemoveFolder Id="DesktopFolder" On="uninstall"/>
+              Name="SmartDoc"
+			  Directory="DesktopFolder"
+              Description="SmartDoc"
+              Target="[INSTALLFOLDER]Wikiled.SmartDoc.exe"
+              WorkingDirectory="MYAPPDIRPROPERTY"/>          
           <RegistryValue
               Root="HKCU"
-              Key="Software/MyAppName"
+              Key="Software\Wikiled\SmartDoc"
               Name="installed"
               Type="integer"
               Value="1"
               KeyPath="yes"/>
-        </Component>
-      </Directory>
+        </Component>      
       <Component Id="myShortcut" Guid="{705722CC-89CC-451C-81CD-F0FA4453BC18}">
         <Shortcut Id="SmartDocShortcut"
              Name="SmartDoc"
              Description="Runs SmartDoc"
              Directory="MyStartMenuFolder"
-             Target="[INSTALLFOLDER]Wikiled.SmartDoc.exe" />
-        <RemoveFolder Id="RemoveStartMenuFolder" Directory="MyStartMenuFolder" On="uninstall" />
+             Target="[INSTALLFOLDER]Wikiled.SmartDoc.exe" />        
         <RegistryValue Root="HKCU"
             Key="Software\Wikiled\SmartDoc"
             Name="installed"
