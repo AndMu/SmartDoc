@@ -34,14 +34,12 @@ namespace Wikiled.SmartDoc.Logic.Helpers
 
         public static Bitmap CreateEmpty()
         {
-            using (Bitmap bitmap = new Bitmap(36, 50))
+            Bitmap bitmap = new Bitmap(36, 50);
+            using (Graphics graphics = Graphics.FromImage(bitmap))
             {
-                using (Graphics graphics = Graphics.FromImage(bitmap))
-                {
-                    Rectangle rect = new Rectangle(0, 0, 36, 50);
-                    graphics.FillRectangle(new SolidBrush(Color.White), rect);
-                    return bitmap;
-                }
+                Rectangle rect = new Rectangle(0, 0, 36, 50);
+                graphics.FillRectangle(new SolidBrush(Color.White), rect);
+                return bitmap;
             }
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.IO;
+using System.Runtime.InteropServices.WindowsRuntime;
 using DevExpress.Pdf;
 using NLog;
 using Wikiled.Core.Utility.Arguments;
@@ -21,6 +22,12 @@ namespace Wikiled.SmartDoc.Logic.Pdf.Preview
             Guard.NotNull(() => file, file);
             try
             {
+                if (file.Extension.ToLower() != ".pdf")
+                {
+                    logger.Debug("Not a pdf {0}", file);
+                    return ImagerHelper.CreateEmpty();
+                }
+
                 using (PdfDocumentProcessor documentProcessor = new PdfDocumentProcessor())
                 {
                     documentProcessor.LoadDocument(file.FullName);
