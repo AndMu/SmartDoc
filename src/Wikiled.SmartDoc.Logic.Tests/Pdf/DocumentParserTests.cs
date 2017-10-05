@@ -39,7 +39,7 @@ namespace Wikiled.SmartDoc.Logic.Tests.Pdf
             Assert.IsTrue(parse.Path.IndexOf("Ticket", StringComparison.OrdinalIgnoreCase) > 0);
             Assert.AreEqual(4120648248, parse.Crc32);
             Assert.AreEqual(1, parse.Labels.Length);
-            Assert.AreEqual(233, parse.WordsTable.Count);
+            Assert.AreEqual(232, parse.WordsTable.Count);
             Assert.AreEqual(2, parse.WordsTable["bank"]);
         }
     }
